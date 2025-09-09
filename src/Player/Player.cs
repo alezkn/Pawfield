@@ -51,7 +51,7 @@ public partial class Player : CharacterBody2D
         {
             if (GetSlideCollision(i).GetCollider() is Node node)
             {
-                GD.Print($"Colidiu com {node.Name}.");
+                GD.Print($"Collided with {node.Name}.");
             }
         }
     }
