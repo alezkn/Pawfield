@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://7wsyp7f0ct23"]
+[gd_scene load_steps=7 format=3 uid="uid://7wsyp7f0ct23"]
 
 [ext_resource type="Script" uid="uid://caee6bqhjhp76" path="res://Player.cs" id="1_sy5k4"]
+[ext_resource type="Script" uid="uid://dpcnqbpddsgoh" path="res://Inimigo.cs" id="2_j2q8x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2q8x"]
 
@@ -12,27 +13,41 @@
 
 [node name="Node" type="Node"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(574, 372)
 scale = Vector2(4.44323, 4.44323)
 script = ExtResource("1_sy5k4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_j2q8x")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
 position = Vector2(9.53674e-07, 3.09944e-06)
 scale = Vector2(20.0227, 20)
 mesh = SubResource("SphereMesh_sy5k4")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(572, 569)
 scale = Vector2(618.96, 9)
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_j2q8x")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Floor"]
 scale = Vector2(2, 2)
 mesh = SubResource("BoxMesh_112p8")
+
+[node name="Inimigo" type="CharacterBody2D" parent="."]
+position = Vector2(697, 372)
+script = ExtResource("2_j2q8x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Inimigo"]
+scale = Vector2(4.44323, 4.44323)
+shape = SubResource("CircleShape2D_j2q8x")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Inimigo"]
+modulate = Color(0.937255, 0, 0.0352941, 1)
+scale = Vector2(88.9655, 88.8646)
+mesh = SubResource("SphereMesh_sy5k4")

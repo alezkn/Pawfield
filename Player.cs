@@ -1,5 +1,6 @@
 using Godot;
 
+//Método pra fzr o bicho ter física com a plataforma  
 public partial class Player : CharacterBody2D
 {
     private float _runSpeed = 350;
@@ -32,5 +33,16 @@ public partial class Player : CharacterBody2D
         Velocity = velocity;
         GetInput();
         MoveAndSlide();
+        for (var i = 0; i < GetSlideCollisionCount(); i++)
+        {
+            var collision = GetSlideCollision(i);
+
+            if (collision.GetCollider() is CharacterBody2D)
+            {
+                GD.Print("Colidiu");
+                collision.GetCollider().Free();
+            }
+        }
+
     }
 }
