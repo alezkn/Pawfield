@@ -1,6 +1,11 @@
 {
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    ".gitignore": ".gitattributes, .editorconfig"
+    ".gitignore": ".gitattributes, .editorconfig",
+    "*.sln": "*.cs, *.csproj, *.user, *.suo, *.cache, *.config, *.dbmdl"
+  },
+  "files.exclude": {
+    "**/*.import": true,
+    "**/*.uid": true
   }
 }

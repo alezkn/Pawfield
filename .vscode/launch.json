@@ -6,7 +6,7 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "C:/Users/Isabella/Desktop/Coding/Godot/Godotdot/Godot.exe",
+      "program": "C:/Codebase/Godot/Godot.exe",
       "args": [],
       "cwd": "${workspaceFolder}",
       "stopAtEntry": false

@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://7wsyp7f0ct23"]
+[gd_scene load_steps=6 format=3 uid="uid://7wsyp7f0ct23"]
 
-[ext_resource type="Script" uid="uid://caee6bqhjhp76" path="res://Player.cs" id="1_sy5k4"]
-[ext_resource type="Script" uid="uid://dpcnqbpddsgoh" path="res://Inimigo.cs" id="2_j2q8x"]
+[ext_resource type="Script" uid="uid://caee6bqhjhp76" path="res://src/Player/Player.cs" id="1_6bctj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2q8x"]
 
@@ -16,7 +15,7 @@
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(574, 372)
 scale = Vector2(4.44323, 4.44323)
-script = ExtResource("1_sy5k4")
+script = ExtResource("1_6bctj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_j2q8x")
@@ -39,15 +38,14 @@ shape = SubResource("RectangleShape2D_j2q8x")
 scale = Vector2(2, 2)
 mesh = SubResource("BoxMesh_112p8")
 
-[node name="Inimigo" type="CharacterBody2D" parent="."]
+[node name="Enemy" type="CharacterBody2D" parent="."]
 position = Vector2(697, 372)
-script = ExtResource("2_j2q8x")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Inimigo"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemy"]
 scale = Vector2(4.44323, 4.44323)
 shape = SubResource("CircleShape2D_j2q8x")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="Inimigo"]
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Enemy"]
 modulate = Color(0.937255, 0, 0.0352941, 1)
 scale = Vector2(88.9655, 88.8646)
 mesh = SubResource("SphereMesh_sy5k4")
