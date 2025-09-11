@@ -18,6 +18,7 @@ public static class Vector2Extensions
         { new Vector2(-1, 1), Directions.LeftDown },
     };
 
+//This chama o input
     public static string GetDirection(this Vector2 input)
     {
         return directionMap.TryGetValue(input, out var dir) ? dir : Directions.Down;
